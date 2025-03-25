@@ -44,6 +44,14 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
             color: white;
+            position: relative;
+        }
+        .hero img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 80px;
+            height: auto;
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -52,7 +60,7 @@
         .hero p {
             font-size: 1.5rem;
             font-weight: bold;
-            font-family: 'Old English Text MT', serif;
+            font-family: 'Georgia', serif;
             margin-bottom: 20px;
         }
         .services {
@@ -111,59 +119,25 @@
     </div>
     <div class="container">
         <div class="hero">
+            <img src="https://moewly.github.io/Testing-Website/images/logo.jpg" alt="Sherlock Services Logo">
             <h1>Welcome to Sherlock Services</h1>
             <p>Solving everyday problems with AI-driven conversations!</p>
         </div>
         <div class="services">
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/library.jpg" alt="Library Chatbot">
-                <h3>Chatbot for Library System</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/restaurant.jpg" alt="Restaurant Chatbot">
-                <h3>Chatbot for Restaurant</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/travelagency.jpg" alt="Travel Chatbot">
-                <h3>Chatbot for Travel Agency</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/university.webp" alt="University Chatbot">
-                <h3>Chatbot for University</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/bookingapp.jpg" alt="Booking Appointment Chatbot">
-                <h3>Chatbot for Booking</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/business.jpg" alt="Business Chatbot">
-                <h3>Chatbot for Various Businesses</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/hospital.avif" alt="Hospital Chatbot">
-                <h3>Chatbot for Hospital</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/embassy.jpg" alt="Embassy Chatbot">
-                <h3>Chatbot for Embassy</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/airport.jpg" alt="Airport Chatbot">
-                <h3>Chatbot for Airport</h3>
-            </div>
-            <div class="service-card">
-                <img src="https://moewly.github.io/Testing-Website/images/school.avif" alt="School Chatbot">
-                <h3>Chatbot for School</h3>
-            </div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/library.jpg" alt="Library Chatbot"><h3>Chatbot for Library System</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/restaurant.jpg" alt="Restaurant Chatbot"><h3>Chatbot for Restaurant</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/travelagency.jpg" alt="Travel Chatbot"><h3>Chatbot for Travel Agency</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/university.webp" alt="University Chatbot"><h3>Chatbot for University</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/bookingapp.jpg" alt="Booking Appointment Chatbot"><h3>Chatbot for Booking</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/business.jpg" alt="Business Chatbot"><h3>Chatbot for Various Businesses</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/hospital.avif" alt="Hospital Chatbot"><h3>Chatbot for Hospital</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/embassy.jpg" alt="Embassy Chatbot"><h3>Chatbot for Embassy</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/airport.jpg" alt="Airport Chatbot"><h3>Chatbot for Airport</h3></div>
+            <div class="service-card"><img src="https://moewly.github.io/Testing-Website/images/school.avif" alt="School Chatbot"><h3>Chatbot for School</h3></div>
         </div>
     </div>
-    <div class="footer">
-        &copy; 2025 Sherlock Services. All rights reserved.
-    </div>
-    <df-messenger
-        project-id="sherlockservices"
-        agent-id="49053fd8-c57e-4fb3-b2ef-48236750b9e4"
-        language-code="en">
+    <div class="footer">&copy; 2025 Sherlock Services. All rights reserved.</div>
+    <df-messenger project-id="sherlockservices" agent-id="49053fd8-c57e-4fb3-b2ef-48236750b9e4" language-code="en">
         <df-messenger-chat-bubble chat-title="SherlockChatbot"></df-messenger-chat-bubble>
     </df-messenger>
 </body>
