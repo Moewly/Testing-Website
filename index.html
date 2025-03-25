@@ -47,7 +47,8 @@
             color: white;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Align left */
+            padding-left: 50px; /* Adjust position */
         }
         .hero img {
             width: 250px;
@@ -56,8 +57,9 @@
             margin-right: 20px;
         }
         .hero-text {
-            text-align: center;
+            text-align: left;
             flex-grow: 1; /* Ensures perfect centering */
+            margin-left: 50px; /* Shift to the left */
         }
         .hero h1 {
             font-size: 3rem;
@@ -188,8 +190,7 @@
 
     <script>
         function openChatbot() {
-            let chatbot = document.querySelector("df-messenger");
-            chatbot.setAttribute("open", "true");
+            document.querySelector("df-messenger").shadowRoot.querySelector("df-messenger-chat").setAttribute("open", "true");
         }
     </script>
 </body>
