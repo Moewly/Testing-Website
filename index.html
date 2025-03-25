@@ -118,7 +118,7 @@
         <div class="hero">
             <h1>Welcome to Sherlock Services</h1>
             <p>Solving everyday problems with AI-driven conversations!</p>
-            <a href="#" class="btn" onclick="openChatbot(); return false;">Chat Now</a>
+            <button class="btn" onclick="openChatbot()">Chat Now</button>
         </div>
         <div class="services">
             <div class="service-card">
@@ -174,13 +174,8 @@
     </df-messenger>
     <script>
         function openChatbot() {
-            let chatbotBubble = document.querySelector('df-messenger');
-            if (chatbotBubble && chatbotBubble.shadowRoot) {
-                let openButton = chatbotBubble.shadowRoot.querySelector("button");
-                if (openButton) {
-                    openButton.click();
-                }
-            }
+            let chatbot = document.querySelector('df-messenger');
+            chatbot.setAttribute('open', 'true');
         }
     </script>
 </body>
