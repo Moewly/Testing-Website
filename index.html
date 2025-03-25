@@ -32,15 +32,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 40px;
+            padding: 20px;
             width: 100%;
         }
         .hero {
             background: #bbb;
             padding: 40px;
             border-radius: 10px;
-            width: 100%;
-            max-width: 100%;
+            width: 95%;
+            max-width: 1400px;
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
@@ -48,9 +48,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
         }
         .hero img {
-            width: 200px;
+            width: 150px;
             height: auto;
             filter: brightness(2);
             margin-right: 20px;
@@ -60,27 +61,25 @@
             text-align: center;
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            text-align: center;
         }
         .hero p {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             font-family: 'Georgia', serif;
-            text-align: center;
         }
         .services {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
             margin-top: 20px;
             width: 95%;
             max-width: 1400px;
         }
         .service-card {
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -89,13 +88,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 220px;
             cursor: pointer;
-            width: 100%;
         }
         .service-card img {
             width: 100%;
-            height: 140px;
+            height: auto;
             object-fit: cover;
             border-radius: 5px;
             margin-bottom: 10px;
@@ -123,13 +120,29 @@
             bottom: 16px;
             right: 16px;
         }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .hero img {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 120px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
     </style>
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </head>
 <body>
-    <div class="header">
-        Sherlock Services - AI Chatbot
-    </div>
+    <div class="header">Sherlock Services - AI Chatbot</div>
     <div class="container">
         <div class="hero">
             <img src="https://moewly.github.io/Testing-Website/images/logo.webp" alt="Sherlock Services Logo">
@@ -147,47 +160,12 @@
                 <img src="https://moewly.github.io/Testing-Website/images/restaurant.jpg" alt="Restaurant Chatbot">
                 <h3>Chatbot for Restaurant</h3>
             </button>
-            <button class="service-card" onclick="openChatbot()">
-                <img src="https://moewly.github.io/Testing-Website/images/travelagency.jpg" alt="Travel Chatbot">
-                <h3>Chatbot for Travel Agency</h3>
-            </button>
-            <button class="service-card" onclick="openChatbot()">
-                <img src="https://moewly.github.io/Testing-Website/images/university.webp" alt="University Chatbot">
-                <h3>Chatbot for University</h3>
-            </button>
-            <button class="service-card" onclick="openChatbot()">
-                <img src="https://moewly.github.io/Testing-Website/images/bookingapp.jpg" alt="Booking Appointment Chatbot">
-                <h3>Chatbot for Booking</h3>
-            </button>
-            <button class="service-card" onclick="openChatbot()">
-                <img src="https://moewly.github.io/Testing-Website/images/business.jpg" alt="Business Chatbot">
-                <h3>Chatbot for Various Businesses</h3>
-            </button>
-            <button class="service-card" onclick="openChatbot()">
-                <img src="https://moewly.github.io/Testing-Website/images/hospital.avif" alt="Hospital Chatbot">
-                <h3>Chatbot for Hospital</h3>
-            </button>
-            <button class="service-card" onclick="openChatbot()">
-                <img src="https://moewly.github.io/Testing-Website/images/embassy.jpg" alt="Embassy Chatbot">
-                <h3>Chatbot for Embassy</h3>
-            </button>
-            <button class="service-card" onclick="openChatbot()">
-                <img src="https://moewly.github.io/Testing-Website/images/airport.jpg" alt="Airport Chatbot">
-                <h3>Chatbot for Airport</h3>
-            </button>
-            <button class="service-card" onclick="openChatbot()">
-                <img src="https://moewly.github.io/Testing-Website/images/school.avif" alt="School Chatbot">
-                <h3>Chatbot for School</h3>
-            </button>
         </div>
     </div>
-    <div class="footer">
-        &copy; 2025 Sherlock Services. All rights reserved.
-    </div>
+    <div class="footer">&copy; 2025 Sherlock Services. All rights reserved.</div>
     <df-messenger id="chatbot" project-id="sherlockservices" agent-id="49053fd8-c57e-4fb3-b2ef-48236750b9e4" language-code="en">
         <df-messenger-chat-bubble chat-title="SherlockChatbot"></df-messenger-chat-bubble>
     </df-messenger>
-
     <script>
         function openChatbot() {
             document.querySelector("df-messenger").shadowRoot.querySelector("df-messenger-chat").setAttribute("open", "true");
