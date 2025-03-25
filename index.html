@@ -105,13 +105,13 @@
         df-messenger {
             z-index: 999;
             position: fixed;
+            bottom: 16px;
+            right: 16px;
             --df-messenger-font-color: #000;
             --df-messenger-font-family: Arial, sans-serif;
             --df-messenger-chat-background: #E7EFFE;
             --df-messenger-message-user-background: #C8E6C9;
             --df-messenger-message-bot-background: #F4C7C3;
-            bottom: 16px;
-            right: 16px;
         }
         @media screen and (max-width: 1200px) {
             .services {
@@ -202,6 +202,8 @@
         &copy; 2025 Sherlock Services. All rights reserved.
     </div>
     
+    <df-messenger intent="WELCOME" chat-title="SherlockChatbot" agent-id="YOUR-AGENT-ID" language-code="en"></df-messenger>
+
     <script>
         function openChat() {
             document.querySelector('df-messenger').shadowRoot.querySelector('df-messenger-chat').setAttribute('open', '');
