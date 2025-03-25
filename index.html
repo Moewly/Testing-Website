@@ -51,7 +51,7 @@
             gap: 20px;
         }
         .hero img {
-            width: 100px;
+            width: 120px;
             height: auto;
             filter: brightness(2);
         }
@@ -106,7 +106,19 @@
             margin-top: auto;
             width: 100%;
         }
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            --df-messenger-font-color: #000;
+            --df-messenger-font-family: Arial, sans-serif;
+            --df-messenger-chat-background: #E7EFFE;
+            --df-messenger-message-user-background: #C8E6C9;
+            --df-messenger-message-bot-background: #F4C7C3;
+            bottom: 16px;
+            right: 16px;
+        }
     </style>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </head>
 <body>
     <div class="header">
@@ -166,5 +178,11 @@
     <div class="footer">
         &copy; 2025 Sherlock Services. All rights reserved.
     </div>
+    <df-messenger
+        project-id="sherlockservices"
+        agent-id="49053fd8-c57e-4fb3-b2ef-48236750b9e4"
+        language-code="en">
+        <df-messenger-chat-bubble chat-title="SherlockChatbot"></df-messenger-chat-bubble>
+    </df-messenger>
 </body>
 </html>
