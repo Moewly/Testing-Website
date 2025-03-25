@@ -36,10 +36,9 @@
             width: 100%;
         }
         .hero {
-            background: #666;
+            background: #888;
             padding: 40px;
             border-radius: 10px;
-            text-align: center;
             width: 100%;
             max-width: 1200px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -51,23 +50,22 @@
             gap: 30px;
         }
         .hero img {
-            width: 180px;
+            width: 200px;
             height: auto;
-            filter: brightness(3);
+            filter: brightness(2);
         }
         .hero-text {
             text-align: center;
             flex: 1;
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 10px;
         }
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
             font-family: 'Georgia', serif;
-            margin-bottom: 20px;
         }
         .services {
             display: grid;
@@ -137,46 +135,46 @@
             </div>
         </div>
         <div class="services">
-            <div class="service-card" onclick="openChatbot()">
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/library.jpg" alt="Library Chatbot">
                 <h3>Chatbot for Library System</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/restaurant.jpg" alt="Restaurant Chatbot">
                 <h3>Chatbot for Restaurant</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/travelagency.jpg" alt="Travel Chatbot">
                 <h3>Chatbot for Travel Agency</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/university.webp" alt="University Chatbot">
                 <h3>Chatbot for University</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/bookingapp.jpg" alt="Booking Appointment Chatbot">
                 <h3>Chatbot for Booking</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/business.jpg" alt="Business Chatbot">
                 <h3>Chatbot for Various Businesses</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/hospital.avif" alt="Hospital Chatbot">
                 <h3>Chatbot for Hospital</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/embassy.jpg" alt="Embassy Chatbot">
                 <h3>Chatbot for Embassy</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/airport.jpg" alt="Airport Chatbot">
                 <h3>Chatbot for Airport</h3>
-            </div>
-            <div class="service-card" onclick="openChatbot()">
+            </button>
+            <button class="service-card" onclick="openChatbot()">
                 <img src="https://moewly.github.io/Testing-Website/images/school.avif" alt="School Chatbot">
                 <h3>Chatbot for School</h3>
-            </div>
+            </button>
         </div>
     </div>
     <div class="footer">
@@ -192,7 +190,8 @@
 
     <script>
         function openChatbot() {
-            document.querySelector("df-messenger").shadowRoot.querySelector("df-messenger-chat").shadowRoot.querySelector("button").click();
+            let chatbot = document.querySelector("df-messenger");
+            chatbot.shadowRoot.querySelector("df-messenger-chat").shadowRoot.querySelector("button").click();
         }
     </script>
 </body>
