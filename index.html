@@ -31,10 +31,9 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            padding: 20px 0;
         }
         .hero {
-            padding: 40px;
-            text-align: center;
             width: 100%;
             max-width: 1400px;
             color: white;
@@ -42,6 +41,7 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            padding: 20px;
         }
         .hero img {
             width: 120px;
@@ -63,11 +63,12 @@
         }
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 20px;
             margin-top: 20px;
             width: 90%;
             max-width: 1400px;
+            margin: auto;
         }
         .service-card {
             background: white;
@@ -87,7 +88,7 @@
         }
         .service-card img {
             width: 100%;
-            height: 140px;
+            height: 160px;
             object-fit: cover;
             border-radius: 5px;
             margin-bottom: 10px;
@@ -110,6 +111,28 @@
             --df-messenger-message-bot-background: #F4C7C3;
             bottom: 16px;
             right: 16px;
+        }
+        @media screen and (max-width: 1200px) {
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero img {
+                margin: 0 0 15px 0;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .services {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     </style>
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
