@@ -175,8 +175,11 @@
     <script>
         function openChatbot() {
             let chatbotBubble = document.querySelector('df-messenger');
-            if (chatbotBubble) {
-                chatbotBubble.setAttribute('open', 'true');
+            if (chatbotBubble && chatbotBubble.shadowRoot) {
+                let openButton = chatbotBubble.shadowRoot.querySelector("button");
+                if (openButton) {
+                    openButton.click();
+                }
             }
         }
     </script>
