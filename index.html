@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sherlock Services - AI Chatbot</title>
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
     <style>
         * {
             margin: 0;
@@ -17,6 +19,7 @@
             flex-direction: column;
             min-height: 100vh;
             width: 100%;
+            align-items: center;
         }
         .header {
             background-color: #333;
@@ -25,6 +28,7 @@
             text-align: center;
             font-size: 2rem;
             font-family: 'Old English Text MT', serif;
+            width: 100%;
         }
         .container {
             flex: 1;
@@ -41,7 +45,7 @@
             border-radius: 10px;
             text-align: center;
             width: 100%;
-            max-width: 1200px;
+            max-width: 100%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
             color: white;
@@ -53,7 +57,10 @@
         .hero img {
             width: 120px;
             height: auto;
-            filter: brightness(2);
+        }
+        .hero-text {
+            text-align: center;
+            flex: 1;
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -73,7 +80,7 @@
             gap: 20px;
             margin-top: 20px;
             width: 100%;
-            max-width: 1400px;
+            max-width: 1200px;
         }
         .service-card {
             background: white;
@@ -86,19 +93,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 250px;
             cursor: pointer;
         }
         .service-card img {
             width: 100%;
-            height: 150px;
+            height: 160px;
             object-fit: cover;
             border-radius: 5px;
             margin-bottom: 10px;
-        }
-        .service-card h3 {
-            font-size: 1rem;
-            font-weight: bold;
         }
         .footer {
             background-color: #333;
@@ -108,57 +110,56 @@
             margin-top: auto;
             width: 100%;
         }
-    </style>
-    <script>
-        function openChat() {
-            let chatWindow = document.querySelector('df-messenger');
-            if (chatWindow) {
-                let chatBox = chatWindow.shadowRoot.querySelector('df-messenger-chat');
-                if (chatBox) {
-                    chatBox.setAttribute('open', '');
-                }
-            }
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            --df-messenger-font-color: #000;
+            --df-messenger-font-family: Google Sans;
+            --df-messenger-chat-background: #E7EFFE;
+            --df-messenger-message-user-background: #C8E6C9;
+            --df-messenger-message-bot-background: #F4C7C3;
+            bottom: 16px;
+            right: 16px;
         }
-    </script>
+    </style>
 </head>
 <body>
-    <div class="header">
-        Sherlock Services - AI Chatbot
-    </div>
+    <div class="header">Sherlock Services - AI Chatbot</div>
     <div class="container">
         <div class="hero">
             <img src="https://moewly.github.io/Testing-Website/images/logo.webp" alt="Sherlock Services Logo">
-            <div>
+            <div class="hero-text">
                 <h1>Welcome to Sherlock Services</h1>
                 <p>Solving everyday problems with AI-driven conversations!</p>
             </div>
         </div>
         <div class="services">
-            <div class="service-card" onclick="openChat()">
-                <img src="https://moewly.github.io/Testing-Website/images/library.jpg" alt="Library Chatbot">
-                <h3>Chatbot for Library System</h3>
-            </div>
-            <div class="service-card" onclick="openChat()">
-                <img src="https://moewly.github.io/Testing-Website/images/restaurant.jpg" alt="Restaurant Chatbot">
-                <h3>Chatbot for Restaurant</h3>
-            </div>
-            <div class="service-card" onclick="openChat()">
-                <img src="https://moewly.github.io/Testing-Website/images/travelagency.jpg" alt="Travel Chatbot">
-                <h3>Chatbot for Travel Agency</h3>
-            </div>
-            <div class="service-card" onclick="openChat()">
-                <img src="https://moewly.github.io/Testing-Website/images/university.webp" alt="University Chatbot">
-                <h3>Chatbot for University</h3>
-            </div>
-            <div class="service-card" onclick="openChat()">
-                <img src="https://moewly.github.io/Testing-Website/images/bookingapp.jpg" alt="Booking Appointment Chatbot">
-                <h3>Chatbot for Booking</h3>
-            </div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for Library System</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for Restaurant</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for Travel Agency</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for University</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for Booking</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for Various Businesses</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for Hospital</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for Embassy</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for Airport</div>
+            <div class="service-card" onclick="openChatbot()">Chatbot for School</div>
         </div>
     </div>
-    <df-messenger chat-title="SherlockChatbot" agent-id="your-dialogflow-agent-id" language-code="en"></df-messenger>
-    <div class="footer">
-        &copy; 2025 Sherlock Services. All rights reserved.
-    </div>
+    <div class="footer">&copy; 2025 Sherlock Services. All rights reserved.</div>
+
+    <df-messenger
+        project-id="sherlockservices"
+        agent-id="49053fd8-c57e-4fb3-b2ef-48236750b9e4"
+        language-code="en"
+        max-query-length="-1">
+        <df-messenger-chat-bubble chat-title="SherlockChatbot"></df-messenger-chat-bubble>
+    </df-messenger>
+
+    <script>
+        function openChatbot() {
+            document.querySelector("df-messenger").shadowRoot.querySelector("df-messenger-chat-bubble").click();
+        }
+    </script>
 </body>
 </html>
