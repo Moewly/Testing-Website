@@ -49,19 +49,6 @@
         .hero p {
             margin-bottom: 20px;
         }
-        .btn {
-            background-color: #007bff;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 18px;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
         .services {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -118,7 +105,6 @@
         <div class="hero">
             <h1>Welcome to Sherlock Services</h1>
             <p>Solving everyday problems with AI-driven conversations!</p>
-            <button class="btn" onclick="openChatbot()">Chat Now</button>
         </div>
         <div class="services">
             <div class="service-card">
@@ -172,11 +158,5 @@
         language-code="en">
         <df-messenger-chat-bubble chat-title="SherlockChatbot"></df-messenger-chat-bubble>
     </df-messenger>
-    <script>
-        function openChatbot() {
-            let chatbot = document.querySelector('df-messenger');
-            chatbot.setAttribute('open', 'true');
-        }
-    </script>
 </body>
 </html>
