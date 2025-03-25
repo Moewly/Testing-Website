@@ -64,31 +64,32 @@
         .services {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            gap: 40px;
             margin-top: 20px;
             width: 90%;
-            max-width: 1400px;
+            max-width: 1500px;
             margin: auto;
         }
         .service-card {
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            height: 320px;
         }
         .service-card:hover {
             transform: scale(1.05);
         }
         .service-card img {
             width: 100%;
-            height: 160px;
+            height: 220px;
             object-fit: cover;
             border-radius: 5px;
             margin-bottom: 10px;
@@ -201,10 +202,6 @@
         &copy; 2025 Sherlock Services. All rights reserved.
     </div>
     
-    <df-messenger project-id="sherlockservices" agent-id="49053fd8-c57e-4fb3-b2ef-48236750b9e4" language-code="en">
-        <df-messenger-chat-bubble chat-title="SherlockChatbot"></df-messenger-chat-bubble>
-    </df-messenger>
-
     <script>
         function openChat() {
             document.querySelector('df-messenger').shadowRoot.querySelector('df-messenger-chat').setAttribute('open', '');
