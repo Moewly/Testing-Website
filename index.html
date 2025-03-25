@@ -26,24 +26,18 @@
             font-size: 2rem;
             font-family: 'Old English Text MT', serif;
         }
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
+        .hero-wrapper {
+            background: #c4c4c4;
             width: 100%;
+            display: flex;
+            justify-content: center;
         }
         .hero {
-            background: #c4c4c4;
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 0;
             text-align: center;
-            width: 90%;
+            width: 100%;
             max-width: 1400px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
             color: white;
             display: flex;
             align-items: center;
@@ -123,7 +117,8 @@
     <div class="header">
         Sherlock Services - AI Chatbot
     </div>
-    <div class="container">
+    
+    <div class="hero-wrapper">
         <div class="hero">
             <img src="https://moewly.github.io/Testing-Website/images/logo.webp" alt="Sherlock Services Logo">
             <div class="hero-text">
@@ -131,6 +126,9 @@
                 <p>Solving everyday problems with AI-driven conversations!</p>
             </div>
         </div>
+    </div>
+
+    <div class="container">
         <div class="services">
             <div class="service-card" onclick="openChat()">
                 <img src="https://moewly.github.io/Testing-Website/images/library.jpg" alt="Library Chatbot">
@@ -174,6 +172,7 @@
             </div>
         </div>
     </div>
+    
     <div class="footer">
         &copy; 2025 Sherlock Services. All rights reserved.
     </div>
