@@ -19,6 +19,8 @@
         h1 {
             margin-top: 20px;
         }
+
+        /* Increase Chatbot Size */
         df-messenger {
             z-index: 999;
             position: fixed;
@@ -27,6 +29,11 @@
             --df-messenger-chat-background: #f3f6fc;
             --df-messenger-message-user-background: #d3e3fd;
             --df-messenger-message-bot-background: #fff;
+            
+            /* Bigger Chatbot */
+            width: 450px;  /* Chatbot Width */
+            height: 700px; /* Chatbot Height */
+            
             bottom: 16px;
             right: 16px;
         }
@@ -50,6 +57,18 @@
 
     <!-- Dialogflow Messenger Script -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
+    <!-- Auto-Welcome Message (Pre-Conversation Greeting) -->
+    <script>
+        window.addEventListener('dfMessengerLoaded', function(event) {
+            const messenger = document.querySelector('df-messenger');
+            
+            // Delay before auto-message
+            setTimeout(() => {
+                messenger.renderCustomTextMessage("Hello! Welcome to Booking Chatbot. I can help you find and book flights. Where would you like to travel today?");
+            }, 2000); // 2 seconds delay
+        });
+    </script>
 
 </body>
 </html>
