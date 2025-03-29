@@ -41,7 +41,7 @@
         /* Hero Section */
         .hero {
             width: 100%;
-            height: 260px; /* Adjusted height */
+            height: 260px;
             background: url('image/travel.webp') no-repeat center center/cover;
             display: flex;
             align-items: center;
@@ -91,8 +91,8 @@
             padding: 12px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 300px; /* Enlarged thumbnails */
-            height: 340px; /* Enlarged thumbnails */
+            width: 300px;
+            height: 340px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -101,14 +101,25 @@
 
         .feature img {
             width: 100%;
-            height: 250px; /* Adjusted size */
+            height: 250px;
             object-fit: cover;
             border-radius: 10px;
         }
 
         .feature h3 {
             font-size: 18px;
-            margin-top: 6px; /* Reduced gap between image & text */
+            margin-top: 6px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
 
         /* Chatbot Styling */
@@ -123,7 +134,6 @@
             bottom: 16px;
             right: 16px;
         }
-
     </style>
 </head>
 <body>
@@ -166,6 +176,10 @@
         </section>
     </div>
 
+    <footer>
+        <p>© 2025 Sherlock Flight Booking Agency. All Rights Reserved.</p>
+    </footer>
+
     <!-- Dialogflow CX Web Messenger Integration -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
     <df-messenger
@@ -174,9 +188,7 @@
         agent-id="531ff7ba-8846-4cef-b60b-c9e35033a98f"
         language-code="en"
         chat-title="Booking Chatbot">
-        <df-messenger-chat-bubble
-            chat-title="Booking Chatbot">
-        </df-messenger-chat-bubble>
+        <df-messenger-chat-bubble chat-title="Booking Chatbot"></df-messenger-chat-bubble>
     </df-messenger>
 
     <!-- JavaScript for Book Now Button -->
@@ -188,6 +200,13 @@
                 messenger.shadowRoot.querySelector("df-messenger-chat").dispatchEvent(event);
             }
         }
+
+        // Open chatbot automatically on page load
+        window.onload = function() {
+            setTimeout(() => {
+                openChatbot();
+            }, 1500);
+        };
     </script>
 
 </body>
