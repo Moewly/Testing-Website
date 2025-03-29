@@ -15,12 +15,13 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f4f4f4;
+            overflow: hidden; /* Prevents scrolling */
         }
 
         header {
             background-color: #222;
             color: white;
-            padding: 15px 0;
+            padding: 10px 0;
             text-align: center;
         }
 
@@ -40,7 +41,7 @@
         /* Hero Section */
         .hero {
             width: 100%;
-            height: 350px;
+            height: 280px; /* Reduced height to fit everything */
             background: url('image/travel.webp') no-repeat center center/cover;
             display: flex;
             align-items: center;
@@ -51,45 +52,47 @@
 
         .hero-content {
             background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
         }
 
         .hero h2 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 20px;
         }
 
         .hero p {
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
 
         .book-now {
             background-color: #ff5722;
             color: white;
             border: none;
-            padding: 12px 24px;
-            font-size: 18px;
+            padding: 8px 16px;
+            font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 12px;
         }
 
-        /* Larger Thumbnails */
+        /* Thumbnails */
         .features {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 40px 20px;
+            gap: 15px;
+            padding: 20px;
             flex-wrap: wrap;
         }
 
         .feature {
             background: white;
-            padding: 20px;
+            padding: 12px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 320px; /* Thumbnail Width */
-            height: 420px; /* Enlarged Thumbnail Height */
+            width: 240px; /* Adjusted width */
+            height: 300px; /* Adjusted height */
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -98,9 +101,14 @@
 
         .feature img {
             width: 100%;
-            height: 280px; /* Further Increased Image Size */
+            height: 200px; /* Further adjusted size */
             object-fit: cover;
             border-radius: 10px;
+        }
+
+        .feature h3 {
+            font-size: 14px;
+            margin-top: 6px; /* Reduced gap between image & text */
         }
 
         /* Chatbot Styling */
@@ -153,7 +161,7 @@
             </div>
             <div class="feature">
                 <img src="image/first flight home.png" alt="Affordable Travel">
-                <h3>World Traveling at Cheaper Cost</h3>
+                <h3>World Flight at Cheaper Cost</h3>
             </div>
         </section>
     </div>
@@ -173,9 +181,9 @@
 
     <script>
         function openChatbot() {
-            const chatBubble = document.querySelector('df-messenger-chat-bubble');
+            const chatBubble = document.querySelector('df-messenger');
             if (chatBubble) {
-                chatBubble.click(); // Simulates a click on the chatbot bubble to open it
+                chatBubble.setAttribute("open", "true"); // Forces the chatbot to open
             }
         }
     </script>
