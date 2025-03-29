@@ -89,7 +89,7 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             width: 320px; /* Thumbnail Width */
-            height: 380px; /* Bigger Thumbnail Height */
+            height: 420px; /* Enlarged Thumbnail Height */
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -98,7 +98,7 @@
 
         .feature img {
             width: 100%;
-            height: 250px; /* Increased Image Size */
+            height: 280px; /* Further Increased Image Size */
             object-fit: cover;
             border-radius: 10px;
         }
@@ -153,7 +153,7 @@
             </div>
             <div class="feature">
                 <img src="image/first flight home.png" alt="Affordable Travel">
-                <h3>Traveling the World with Affordable Prices</h3>
+                <h3>World Traveling at Cheaper Cost</h3>
             </div>
         </section>
     </div>
@@ -167,15 +167,16 @@
         language-code="en"
         chat-title="Booking Chatbot">
         <df-messenger-chat-bubble
-            chat-title="Booking Chatbot"
-            open="true">
+            chat-title="Booking Chatbot">
         </df-messenger-chat-bubble>
     </df-messenger>
 
     <script>
         function openChatbot() {
-            const chatElement = document.querySelector('df-messenger');
-            chatElement.setAttribute('open', 'true');
+            const chatBubble = document.querySelector('df-messenger-chat-bubble');
+            if (chatBubble) {
+                chatBubble.click(); // Simulates a click on the chatbot bubble to open it
+            }
         }
     </script>
 
