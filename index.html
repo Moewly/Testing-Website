@@ -81,8 +81,8 @@
         .features {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            padding: 20px;
+            gap: 20px;
+            padding: 10px;
             flex-wrap: wrap;
         }
 
@@ -91,8 +91,8 @@
             padding: 12px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 260px; /* Enlarged thumbnails */
-            height: 320px; /* Enlarged thumbnails */
+            width: 300px; /* Enlarged thumbnails */
+            height: 340px; /* Enlarged thumbnails */
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -101,14 +101,14 @@
 
         .feature img {
             width: 100%;
-            height: 220px; /* Further adjusted size */
+            height: 250px; /* Adjusted size */
             object-fit: cover;
             border-radius: 10px;
         }
 
         .feature h3 {
-            font-size: 16px;
-            margin-top: 4px; /* Reduced gap between image & text */
+            font-size: 18px;
+            margin-top: 6px; /* Reduced gap between image & text */
         }
 
         /* Chatbot Styling */
@@ -182,12 +182,11 @@
     <!-- JavaScript for Book Now Button -->
     <script>
         function openChatbot() {
-            setTimeout(() => {
-                const chatBubble = document.querySelector('df-messenger');
-                if (chatBubble) {
-                    chatBubble.shadowRoot.querySelector('df-messenger-chat').setAttribute("open", "true"); // Open chatbot
-                }
-            }, 500); // Delay ensures chatbot script loads
+            let messenger = document.querySelector("df-messenger");
+            if (messenger) {
+                let event = new Event("click");
+                messenger.shadowRoot.querySelector("df-messenger-chat").dispatchEvent(event);
+            }
         }
     </script>
 
