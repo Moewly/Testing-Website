@@ -5,39 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sherlock Flight Booking Agency</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
+            overflow: hidden; /* Prevent scrolling */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
         }
 
         header {
             background-color: #222;
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             text-align: center;
         }
 
         .logo {
-            width: 120px;
+            width: 80px;
             display: block;
             margin: 0 auto;
         }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 85vh; /* Takes most of the viewport height */
+            padding: 20px;
+        }
+
         .hero {
-            height: 400px;
+            flex: 1;
+            width: 100%;
+            background: url('image/travel.webp') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            background: url('image/travel.webp') no-repeat center center/cover;
         }
 
         .hero-content {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 10px;
         }
@@ -52,29 +70,30 @@
             border-radius: 5px;
         }
 
-        .featured {
-            padding: 40px 20px;
-        }
-
         .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            display: flex;
             justify-content: center;
-            padding: 20px;
+            gap: 15px;
+            padding: 10px;
+            flex-wrap: wrap;
         }
 
         .feature {
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
             text-align: center;
+            height: 230px; /* Ensures equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .feature img {
             width: 100%;
-            height: 220px;
+            height: 120px;
             object-fit: cover;
             border-radius: 10px;
         }
@@ -91,6 +110,7 @@
             bottom: 16px;
             right: 16px;
         }
+
     </style>
 </head>
 <body>
@@ -100,39 +120,34 @@
         <h1>Sherlock Flight Booking Agency</h1>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Book Your Next Flight with Ease</h2>
-            <p>Find the best flights at the best prices with Sherlock Flight Booking.</p>
-            <button class="book-now">Book Now</button>
-        </div>
-    </section>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Book Your Next Flight with Ease</h2>
+                <p>Find the best flights at the best prices with Sherlock Flight Booking.</p>
+                <button class="book-now">Book Now</button>
+            </div>
+        </section>
 
-    <section class="featured">
-        <h2>Why Choose Us?</h2>
-        <div class="features">
+        <section class="features">
             <div class="feature">
                 <img src="image/airport.jpg" alt="Airport">
-                <h3>Seamless Flight Booking</h3>
-                <p>Book your flights in a few clicks with our smart AI assistant.</p>
+                <h3>Seamless Booking</h3>
             </div>
             <div class="feature">
                 <img src="image/europe-directions.webp" alt="Europe Directions">
                 <h3>Best Travel Routes</h3>
-                <p>Plan your journey with the most efficient and affordable routes.</p>
             </div>
             <div class="feature">
                 <img src="image/france.jpg" alt="France Travel">
                 <h3>Dream Destinations</h3>
-                <p>Explore breathtaking places with our travel recommendations.</p>
             </div>
             <div class="feature">
                 <img src="image/safe flight.jpg" alt="Safe Flight">
-                <h3>Secure & Comfortable Flights</h3>
-                <p>Experience top-notch safety and comfort in the air.</p>
+                <h3>Secure & Comfortable</h3>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Dialogflow CX Web Messenger Integration -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
