@@ -58,15 +58,18 @@
     <!-- Dialogflow Messenger Script -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
-    <!-- Auto-Open Chatbot on Page Load -->
+    <!-- Auto-Open Chatbot on Page Load (New Fix) -->
     <script>
         window.addEventListener('dfMessengerLoaded', function(event) {
             setTimeout(() => {
-                const chatBubble = document.querySelector("df-messenger");
+                let chatBubble = document.querySelector("df-messenger");
                 if (chatBubble) {
-                    chatBubble.shadowRoot.querySelector("df-messenger-chat").setAttribute("open", "true");
+                    let chatElement = chatBubble.shadowRoot.querySelector("df-messenger-chat");
+                    if (chatElement) {
+                        chatElement.setAttribute("open", "true");
+                    }
                 }
-            }, 2000); // 2 seconds delay
+            }, 1500); // 1.5 seconds delay
         });
     </script>
 
