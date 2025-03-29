@@ -58,14 +58,14 @@
     <!-- Dialogflow Messenger Script -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
-    <!-- Auto-Welcome Message (Pre-Conversation Greeting) -->
+    <!-- Auto-Open Chatbot on Page Load -->
     <script>
         window.addEventListener('dfMessengerLoaded', function(event) {
-            const messenger = document.querySelector('df-messenger');
-            
-            // Delay before auto-message
             setTimeout(() => {
-                messenger.renderCustomTextMessage("Hello! Welcome to Booking Chatbot. I can help you find and book flights. Where would you like to travel today?");
+                const chatBubble = document.querySelector("df-messenger");
+                if (chatBubble) {
+                    chatBubble.shadowRoot.querySelector("df-messenger-chat").setAttribute("open", "true");
+                }
             }, 2000); // 2 seconds delay
         });
     </script>
