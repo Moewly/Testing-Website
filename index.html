@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Chatbot</title>
+
+    <!-- Dialogflow Messenger Styles -->
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,50 +19,37 @@
         h1 {
             margin-top: 20px;
         }
-        #chat-container {
-            width: 400px;
-            height: 500px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 20px auto;
-            background: white;
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            --df-messenger-font-color: #000;
+            --df-messenger-font-family: Google Sans;
+            --df-messenger-chat-background: #f3f6fc;
+            --df-messenger-message-user-background: #d3e3fd;
+            --df-messenger-message-bot-background: #fff;
+            bottom: 16px;
+            right: 16px;
         }
     </style>
 </head>
 <body>
 
     <h1>Booking Chatbot</h1>
-    
-    <!-- Chatbot Container -->
-    <div id="chat-container"></div>
 
-    <!-- Dialogflow CX Web Messenger Integration -->
-    <script>
-        (function(d, t) {
-            var script = d.createElement(t), firstScript = d.getElementsByTagName(t)[0];
-            script.src = "https://www.gstatic.com/dialogflow-console/fast/messenger-cx/bootstrap.js?v=1";
-            script.async = true;
-            firstScript.parentNode.insertBefore(script, firstScript);
-        }(document, "script"));
-    </script>
+    <!-- Dialogflow Messenger -->
+    <df-messenger
+        location="asia-southeast1"
+        project-id="booking-chatbot-455209"
+        agent-id="531ff7ba-8846-4cef-b60b-c9e35033a98f"
+        language-code="en"
+        max-query-length="-1">
+        <df-messenger-chat-bubble
+            chat-title="Booking Chatbot">
+        </df-messenger-chat-bubble>
+    </df-messenger>
 
-    <!-- Alternative Forced Chatbot Initialization -->
-    <script>
-        window.addEventListener('dfMessengerLoaded', function(event) {
-            const dfMessenger = document.querySelector('df-messenger');
-            dfMessenger.setAttribute("df-cx", "true");
-            dfMessenger.setAttribute("chat-title", "Booking Chatbot");
-            dfMessenger.setAttribute("agent-id", "531f7fba-8846-4cef-b60b-c9e35033a98f");
-            dfMessenger.setAttribute("project-id", "booking-chatbot-455209");
-            dfMessenger.setAttribute("location", "asia-southeast1");
-            dfMessenger.setAttribute("language-code", "en");
-            dfMessenger.setAttribute("welcome-message", "Hello! Welcome to Booking Chatbot. I can help you find and book flights. Where would you like to travel today?");
-        });
-    </script>
-
-    <!-- Dialogflow CX Messenger -->
-    <df-messenger df-cx="true"></df-messenger>
+    <!-- Dialogflow Messenger Script -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
 </body>
 </html>
