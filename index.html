@@ -15,7 +15,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f4f4f4;
-            overflow: hidden; /* Prevents scrolling */
+            overflow: hidden; /* Prevent scrolling */
         }
 
         header {
@@ -41,7 +41,7 @@
         /* Hero Section */
         .hero {
             width: 100%;
-            height: 280px; /* Reduced height to fit everything */
+            height: 260px; /* Adjusted height */
             background: url('image/travel.webp') no-repeat center center/cover;
             display: flex;
             align-items: center;
@@ -91,8 +91,8 @@
             padding: 12px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 240px; /* Adjusted width */
-            height: 300px; /* Adjusted height */
+            width: 260px; /* Enlarged thumbnails */
+            height: 320px; /* Enlarged thumbnails */
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -101,14 +101,14 @@
 
         .feature img {
             width: 100%;
-            height: 200px; /* Further adjusted size */
+            height: 220px; /* Further adjusted size */
             object-fit: cover;
             border-radius: 10px;
         }
 
         .feature h3 {
-            font-size: 14px;
-            margin-top: 6px; /* Reduced gap between image & text */
+            font-size: 16px;
+            margin-top: 4px; /* Reduced gap between image & text */
         }
 
         /* Chatbot Styling */
@@ -179,12 +179,15 @@
         </df-messenger-chat-bubble>
     </df-messenger>
 
+    <!-- JavaScript for Book Now Button -->
     <script>
         function openChatbot() {
-            const chatBubble = document.querySelector('df-messenger');
-            if (chatBubble) {
-                chatBubble.setAttribute("open", "true"); // Forces the chatbot to open
-            }
+            setTimeout(() => {
+                const chatBubble = document.querySelector('df-messenger');
+                if (chatBubble) {
+                    chatBubble.shadowRoot.querySelector('df-messenger-chat').setAttribute("open", "true"); // Open chatbot
+                }
+            }, 500); // Delay ensures chatbot script loads
         }
     </script>
 
