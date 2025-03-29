@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        #chat-container {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px auto;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Booking Chatbot</h1>
+    
+    <!-- Chatbot Container -->
+    <div id="chat-container"></div>
+
+    <!-- Dialogflow CX Web Messenger Integration -->
+    <script>
+        (function(d, t) {
+            var script = d.createElement(t), firstScript = d.getElementsByTagName(t)[0];
+            script.src = "https://www.gstatic.com/dialogflow-console/fast/messenger-cx/bootstrap.js?v=1";
+            script.async = true;
+            firstScript.parentNode.insertBefore(script, firstScript);
+        }(document, "script"));
+    </script>
+
+    <!-- Dialogflow CX Messenger -->
+    <df-messenger
+        df-cx="true"
+        location="asia-southeast1"
+        project-id="booking-chatbot-455209"
+        agent-id="531f7fba-8846-4cef-b60b-c9e35033a98f"
+        language-code="en"
+        chat-title="Booking Chatbot"
+        welcome-message="Hello! Welcome to Booking Chatbot. I can help you find and book flights. Where would you like to travel today?">
+    </df-messenger>
+
+</body>
+</html>
