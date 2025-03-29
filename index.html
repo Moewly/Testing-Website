@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Chatbot</title>
-
-    <!-- Dialogflow Messenger Styles -->
-    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-    
+    <title>Sherlock Flight Booking Agency</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,37 +12,127 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        h1 {
-            margin-top: 20px;
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
         }
 
-        /* Default Dialogflow Messenger Position */
+        .logo {
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .hero {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: url('image/travelagency.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .featured {
+            padding: 40px 20px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .feature img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Chatbot Styling */
         df-messenger {
+            z-index: 999;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
+            --df-messenger-font-color: #000;
+            --df-messenger-font-family: Google Sans;
+            --df-messenger-chat-background: #f3f6fc;
+            --df-messenger-message-user-background: #d3e3fd;
+            --df-messenger-message-bot-background: #fff;
+            bottom: 16px;
+            right: 16px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Booking Chatbot</h1>
+    <header>
+        <img src="image/logo.jpg" alt="Sherlock Logo" class="logo">
+        <h1>Sherlock Flight Booking Agency</h1>
+    </header>
 
-    <!-- Dialogflow Messenger -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Book Your Next Flight with Ease</h2>
+            <p>Find the best flights at the best prices with Sherlock Flight Booking.</p>
+            <button class="book-now">Book Now</button>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2>Why Choose Us?</h2>
+        <div class="features">
+            <div class="feature">
+                <img src="image/airport.jpg" alt="Airport">
+                <h3>Seamless Flight Booking</h3>
+                <p>Book your flights in a few clicks with our smart AI assistant.</p>
+            </div>
+            <div class="feature">
+                <img src="image/travelagency.jpg" alt="Travel Agency">
+                <h3>Best Travel Deals</h3>
+                <p>Get exclusive discounts and offers on flights worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dialogflow CX Web Messenger Integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
     <df-messenger
         location="asia-southeast1"
         project-id="booking-chatbot-455209"
         agent-id="531ff7ba-8846-4cef-b60b-c9e35033a98f"
         language-code="en"
-        max-query-length="-1">
+        chat-title="Booking Chatbot">
         <df-messenger-chat-bubble
-            chat-title="Booking Chatbot">
+            chat-title="Booking Chatbot"
+            open="true">
         </df-messenger-chat-bubble>
     </df-messenger>
-
-    <!-- Dialogflow Messenger Script -->
-    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
 </body>
 </html>
